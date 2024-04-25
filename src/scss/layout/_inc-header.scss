@@ -1,0 +1,173 @@
+.header {
+  padding: 30px 0;
+  background-color: #fff;
+
+  &-content {
+    align-items: center;
+  }
+
+  &-logo {
+    max-width: 236px;
+    width: 100%;
+    line-height: 0;
+    margin-right: 48px;
+  }
+
+  &-nav {
+    display: flex;
+    margin-bottom: 0;
+    max-width: calc(100% - 789px);
+    width: 100%;
+    margin-right: 40px;
+
+    li {
+      display: inline-block;
+      flex: 1 0 auto;
+      margin-right: 28px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      font-size: 15px;
+      font-weight: 500;
+      transition: color .2s ease;
+
+      &:hover {
+        color: #ec6b1e;
+      }
+    }
+  }
+
+  &-contacts {
+    display: flex;
+    align-items: center;
+  }
+
+  &-phone {
+    height: 58px;
+    border: 1px solid #cfdae7;
+    border-radius: 93px;
+    padding: 10px 18px;
+    padding-left: 50px;
+    line-height: 1;
+    max-width: 244px;
+    flex: 0 0 244px;
+    position: relative;
+    font-size: 18px;
+    font-weight: 700;
+    display: block;
+    color: #212121;
+    transition: color .2s ease, background-color .2s ease, border-color .2s ease;
+    margin-right: 16px;
+
+    span {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      margin-top: 4px;
+      color: #728EAE;
+      transition: color .2s ease;
+    }
+
+    &-icon {
+      position: relative;
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translate(0, -50%);
+      background-color: #EC6B1E;
+      border-radius: 50%;
+      transition: background-color .2s ease;
+
+      img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &:hover {
+      .header-phone-icon {
+        img {
+          animation: 1200ms ease 0s normal none 1 running shake;
+          animation-iteration-count: infinite;
+        }
+      }
+    }
+  }
+
+  &-record {
+    height: 58px;
+    line-height: 56px;
+    color: #fff;
+    background-color: #EC6B1E;
+    border: 1px solid #EC6B1E;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 205px;
+    flex: 0 0 205px;
+    border-radius: 93px;
+    position: relative;
+    font-weight: 700;
+    display: block;
+    transition: background-color .2s ease;
+
+    &:hover {
+      background-color: #ec7834;
+    }
+  }
+}
+
+@keyframes shake {
+  0% {
+      transform:  translate(-50%, -50%) rotateZ(0deg);
+  }
+
+  10% {
+      transform:  translate(-50%, -50%) rotateZ(-30deg);
+  }
+
+  20% {
+      transform:  translate(-50%, -50%) rotateZ(15deg);
+  }
+
+  30% {
+      transform:  translate(-50%, -50%) rotateZ(-10deg);
+  }
+
+  40% {
+      transform:  translate(-50%, -50%) rotateZ(7.5deg);
+  }
+
+  50% {
+      transform:  translate(-50%, -50%) rotateZ(-6deg);
+  }
+
+  60% {
+      transform:  translate(-50%, -50%) rotateZ(5deg);
+  }
+
+  70% {
+      transform:  translate(-50%, -50%) rotateZ(-4.28571deg);
+  }
+
+  80% {
+      transform:  translate(-50%, -50%) rotateZ(3.75deg);
+  }
+
+  90% {
+      transform:  translate(-50%, -50%) rotateZ(-3.33333deg);
+  }
+
+  100% {
+      transform:  translate(-50%, -50%) rotateZ(0deg);
+  }
+}

@@ -1,0 +1,45 @@
+.footer {
+  padding: 54px 0;
+  background-color: #fff;
+
+  &-content {
+    justify-content: space-between;
+
+    &-license {
+      max-width: 460px;
+    }
+
+    &-info {
+      max-width: 490px;
+      font-size: 14px;
+    }
+  }
+
+  &-create {
+    max-width: 268px;
+    flex: 0 0 268px;
+    display: inline-block;
+
+    &-title {
+      display: inline-block;
+    }
+
+    &-name {
+      padding-left: 34px;
+      position: relative;
+      display: inline-block;
+
+      &::before {
+        content: "";
+        background-image: url("../images/farba.svg");
+        background-repeat: no-repeat;
+        width: 23px;
+        height: 36px;
+        background-size: 100%;
+        position: absolute;
+        left: 5px;
+        top: -15px;
+      }
+    }
+  }
+}
