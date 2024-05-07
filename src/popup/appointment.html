@@ -1,0 +1,318 @@
+<div class="ui-popup ui-popup__apointment mfp-anim">
+  <div class="ui-popup-title">Запись на прием</div>
+  <div class="ui-popup-content">
+    <form class="appointment">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="ui-field">
+            <label for="specialization" class="ui-label">Выберите специализацию</label>
+            <select name="specialization" id="specialization" class="ui-select ui-select__required">
+              <option value="" selected disabled>Выберите специализацию</option>
+              <option value="1">Аллерголог-иммунолог Аллерголог иммунолог Аллерголог иммунолог</option>
+              <option value="2">Анестезиолог-реаниматолог</option>
+              <option value="3">Врач УЗИ</option>
+              <option value="4">Врач-эндоскопист</option>
+              <option value="5">Дерматовенеролог</option>
+              <option value="1">Аллерголог-иммунолог</option>
+              <option value="2">Анестезиолог-реаниматолог</option>
+              <option value="3">Врач УЗИ</option>
+              <option value="4">Врач-эндоскопист</option>
+              <option value="5">Дерматовенеролог</option>
+            </select>
+            <span placeholder="Фамилия" class="ui-star"></span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ui-field">
+            <label for="doctor" class="ui-label">Выберите врача</label>
+            <select name="doctor" id="doctor" class="ui-select ui-select__required">
+              <option value="" selected disabled>
+                Выберите врача
+              </option>
+              <option value="1">Аллерголог-иммунолог</option>
+              <option value="2">Анестезиолог-реаниматолог</option>
+              <option value="3">Врач УЗИ</option>
+              <option value="4">Врач-эндоскопист</option>
+              <option value="5">Дерматовенеролог</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ui-field">
+            <label for="service" class="ui-label">Выберите услугу</label>
+            <select name="service" id="service" class="ui-select ui-select__required">
+              <option value="" selected disabled>
+                Выберите услугу
+              </option>
+              <option value="1">Услуга</option>
+              <option value="2">Услуга</option>
+              <option value="3">Услуга</option>
+              <option value="4">Услуга</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="date-time-wrapper">
+            <div class="ui-field">
+              <label for="date" class="ui-label">Дата приема</label>
+              <input
+                type="text"
+                required
+                class="ui-input datepicker"
+                name="date"
+                id="date"
+              >
+              <span placeholder="Дата приема" class="ui-star"></span>
+              <img src="./images/calendar.svg" alt="calendar" class="ui-picker">
+            </div>
+            <div class="ui-field ui-field__time">
+              <label for="time" class="ui-label">Время</label>
+              <select name="time" id="time" class="ui-select ui-select__time ui-select__required">
+                <option value="" selected disabled>
+                  Время
+                </option>
+                <option value="8">08:00</option>
+                <option value="9">09:00</option>
+                <option value="10">10:00</option>
+                <option value="11">11:00</option>
+                <option value="12">12:00</option>
+                <option value="13">13:00</option>
+                <option value="14">14:00</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ui-field">
+            <label for="specialization" class="ui-label">Фамилия</label>
+            <input
+              type="text"
+              required
+              class="ui-input"
+              name="surname"
+              id="surname"
+            >
+            <span placeholder="Фамилия" class="ui-star"></span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ui-field">
+            <label for="specialization" class="ui-label">Имя</label>
+            <input
+              type="text"
+              required
+              class="ui-input"
+              name="name"
+              id="name"
+            >
+            <span placeholder="Имя" class="ui-star"></span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ui-field">
+            <label for="specialization" class="ui-label">Отчество</label>
+            <input
+              type="text"
+              class="ui-input"
+              name="patronymic"
+              id="patronymic"
+              placeholder="Отчество"
+            >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ui-field">
+            <label for="specialization" class="ui-label">Телефон</label>
+            <input
+              type="text"
+              required
+              class="ui-input ux-phonemask"
+              name="phone"
+              id="phone"
+            >
+            <span placeholder="Телефон" class="ui-star"></span>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="ui-field">
+            <label for="specialization" class="ui-label">Комментарий</label>
+            <textarea
+              class="ui-textarea"
+              name="comment"
+              id="comment"
+              placeholder="Комментарий"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="appointment-agree">
+        <button type="submit" class="ui-btn">
+          Записаться
+        </button>
+        <div class="appointment-agree-text">
+          Нажимая на кнопку, вы соглашаетесь с
+          <a href="#">условиями</a>
+          обработки и использования персональных данных
+        </div>
+      </div>
+    </form>
+  </div>
+  <script>
+    $('.ui-select').styler();
+
+   
+    jQuery(function($){
+      $.datepicker.regional['ru'] = {
+        closeText: 'Закрыть',
+        prevText: 'Пред',
+        nextText: 'След',
+        currentText: 'Сегодня',
+        monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+        monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн', 'Июл','Авг','Сен','Окт','Ноя','Дек'],
+        dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+        dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+        dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+        weekHeader: 'Нед',
+        dateFormat: 'dd.mm.yy',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ''
+      };
+
+      $.datepicker.setDefaults($.datepicker.regional['ru']);
+	  });
+
+    $(".datepicker").datepicker();
+
+
+
+    
+
+      // маска ввода номера телефона
+    function initMask() {
+        const phoneInputs = document.querySelectorAll('.ux-phonemask'); 
+    
+        if (phoneInputs.length) {
+            phoneInputs.forEach(element => {
+                IMask(element, {
+                mask: '+{7} (000) 000-00-00',
+                lazy: false,
+                placeholderChar: '_'
+                });
+            });
+        }
+    }
+    
+    initMask();
+
+    $('#doctor').prop('disabled', true);
+    $('#doctor').parent('.jq-selectbox').addClass('disabled');
+
+    $('#service').prop('disabled', true);
+    $('#service').parent('.jq-selectbox').addClass('disabled');
+
+    $('#specialization').on('change', function() {       
+        // Удаляем атрибут disabled у селекта "doctor"
+        $('#doctor').prop('disabled', false);
+        $('#doctor').parent('.jq-selectbox').removeClass('disabled');
+    });
+
+    // Обработчик события change для селекта "doctor"
+    $('#doctor').on('change', function() {
+        // Удаляем атрибут disabled у селекта "service"
+        $('#service').prop('disabled', false);
+        $('#service').parent('.jq-selectbox').removeClass('disabled');
+    });
+
+    // валидация
+    $(document).ready(function () {
+        $.validator.addMethod("noDigits", function(value, element) {
+        return this.optional(element) || !/\d/.test(value);
+      }, 'Заполнено неверно');
+
+      $.validator.addMethod("phone", function (value, element) {
+        if (value.startsWith('+375')) {
+          return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){12}(\s*)?$/i.test(value);
+        } else if (value.startsWith('+7')) {
+          return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11}(\s*)?$/i.test(value);
+        } else {
+          return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11,14}(\s*)?$/i.test(value);
+        }
+      }, "Заполнено неверно");   
+
+      $.validator.messages.required = 'не заполнено';
+
+      $(".appointment").validate({
+        submitHandler: function(form, event) {
+          event.preventDefault();
+          form.reset();
+        },
+        rules: {
+          specialization: { required: true },
+          doctor: { required: true },
+          service: { required: true },
+          date: { required: true },
+          time: { required: true },
+          surname: { noDigits: true, required: true },
+          name: { noDigits: true, required: true },
+          phone: { phone: true, required: true },
+        },
+      });
+
+
+      // Получаем все поля ввода
+      const inputs = document.querySelectorAll('.ui-input:not(.datepicker), .ui-textarea');
+
+      const seclects = document.querySelectorAll('.ui-select')
+
+      // Добавляем обработчики событий для каждого поля ввода
+      inputs.forEach(input => {
+          input.addEventListener('input', toggleLabel);
+      });
+
+      seclects.forEach(select => {
+        select.addEventListener('click', toggleLabelSelect)
+      })
+
+
+      // Функция для переключения видимости label для select
+      function toggleLabelSelect(event) {
+        const select = event.target;
+        const uiField = select.closest('.ui-field');
+        if (uiField) {
+          const label = uiField.querySelector('.ui-label');
+          if (label) {
+            const dropdown = uiField.querySelector('.jq-selectbox__dropdown');
+            if (dropdown) {
+              const selectedOption = dropdown.querySelector('li.selected:not(.disabled)');
+              if (selectedOption) {
+                label.classList.add('visible');
+              } else {
+                label.classList.remove('visible');
+              }
+            }
+          }
+        }
+      }
+
+      // Функция для переключения видимости label
+      function toggleLabel(event) { 
+        const input = event.target;
+        const uiField = input.closest('.ui-field');
+      
+        if (uiField) {
+          const label = uiField.querySelector('.ui-label');
+          if (label) {
+          
+            if (input.value.trim() !== '') {
+              label.classList.add('visible');
+            } else {
+              label.classList.remove('visible');
+            }
+          }
+        }
+      }
+    });
+  </script>
+</div>

@@ -4,14 +4,28 @@
 
   &-content {
     justify-content: space-between;
+    gap: 24px;
+
+    @media(max-width: 1024px) {    
+      flex-wrap: wrap;
+    }
 
     &-license {
       max-width: 460px;
+
+      @media(max-width: 960px) {    
+        max-width: max-content;
+      }
     }
 
     &-info {
       max-width: 490px;
       font-size: 14px;
+
+      @media(max-width: 960px) {    
+        max-width: max-content;
+        margin-bottom: 20px;
+      }
     }
   }
 

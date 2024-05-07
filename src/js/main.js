@@ -82,6 +82,26 @@ $( document ).ready(function() {
     }).mount();
   }
 
+  if($(".main-images-splide")) {
+    new Splide( '.main-images-splide', {
+      pagination: true,
+      arrows: false,
+      type: "loop",
+      perPage: 1,
+      breakpoints: {
+        599: {
+          perPage: 1,
+        },
+        992: {
+          perPage: 2,
+        },
+        1024: {
+          perPage: 3,
+        },
+      },
+    }).mount();
+  }
+
   $('.toggle').change(function() {
     const selectedValue = $('input[name=toggle]:checked').val();
 
@@ -139,4 +159,7 @@ $( document ).ready(function() {
       bg.classList.remove('active')
     })
   });
+
+  // form styler
+  $('.ui-select').styler();
 });
