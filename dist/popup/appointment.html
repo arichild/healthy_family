@@ -61,6 +61,7 @@
                 class="ui-input datepicker"
                 name="date"
                 id="date"
+                autocomplete="off"
               >
               <span placeholder="Дата приема" class="ui-star"></span>
               <img src="./images/calendar.svg" alt="calendar" class="ui-picker">
@@ -71,13 +72,6 @@
                 <option value="" selected disabled>
                   Время
                 </option>
-                <option value="8">08:00</option>
-                <option value="9">09:00</option>
-                <option value="10">10:00</option>
-                <option value="11">11:00</option>
-                <option value="12">12:00</option>
-                <option value="13">13:00</option>
-                <option value="14">14:00</option>
               </select>
             </div>
           </div>
@@ -160,7 +154,37 @@
   <script>
     $('.ui-select').styler();
 
-   
+    
+    var availableDates = {};
+
+    function getAvailableDates() {
+      // Массив доступных дат и времени для примера. Предположим, что мы получили следующие даты:
+      availableDays = [
+        {
+          date: "15.05.2024",
+          time: ['10:00','11:00','12:00']
+        },
+        {
+          date: "17.05.2024",
+          time: ['12:00', '13:45', '14:35', '15:20', '16:50','18:00']
+        },
+        {
+          date: "22.05.2024",
+          time: ['12:00','15:00', ,'18:00']
+        },
+        {
+          date: "23.05.2024",
+          time: ['10:00','11:00','12:00', '14:45']
+        },
+        {
+          date: "27.05.2024",
+          time: ['08:00', '09:10', '10:20', '11:00', '12:00', '14:45']
+        },
+      ]
+    }
+
+    getAvailableDates();
+
     jQuery(function($){
       $.datepicker.regional['ru'] = {
         closeText: 'Закрыть',
@@ -181,27 +205,45 @@
       };
 
       $.datepicker.setDefaults($.datepicker.regional['ru']);
-	  });
-
-    $(".datepicker").datepicker();
-
-
-
-    
-
-      // маска ввода номера телефона
-    function initMask() {
-        const phoneInputs = document.querySelectorAll('.ux-phonemask'); 
-    
-        if (phoneInputs.length) {
-            phoneInputs.forEach(element => {
-                IMask(element, {
-                mask: '+{7} (000) 000-00-00',
-                lazy: false,
-                placeholderChar: '_'
-                });
-            });
+      $(".datepicker").datepicker({
+        beforeShowDay: function(date) {
+          const formattedDate = $.datepicker.formatDate('dd.mm.yy', date);
+          const availableDay = availableDays.find(day => day.date === formattedDate);
+          return [!!availableDay, ''];
+        },
+        onSelect: function(dateText) {
+          const selectedDay = availableDays.find(day => day.date === dateText);
+ 
+          updateTimeOptions(selectedDay.time);
+          $("#time").trigger("refresh"); // Триггер для обновления FormStyler
         }
+      });
+
+      function updateTimeOptions(times) {
+        const $timeSelect = $("#time");
+     
+        $timeSelect.html('<option value="" selected disabled>Время</option>'); // Очистка селекта
+
+        times.forEach(time => {
+          $timeSelect.append(`<option value="${time}">${time}</option>`);
+        });
+      }
+     
+	  });    
+
+    // маска ввода номера телефона
+    function initMask() {
+      const phoneInputs = document.querySelectorAll('.ux-phonemask'); 
+  
+      if (phoneInputs.length) {
+        phoneInputs.forEach(element => {
+          IMask(element, {
+          mask: '+{7} (000) 000-00-00',
+          lazy: false,
+          placeholderChar: '_'
+          });
+        });
+      }
     }
     
     initMask();
