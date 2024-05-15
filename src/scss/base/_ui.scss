@@ -617,3 +617,18 @@
   align-items:flex-end;
   gap: 20px;
 }
+
+// datepicker 
+.ui-widget-header {
+  background: $primary;
+  border-color: $primary;
+}
+
+.ui-widget-content {
+  background: #FFF1E9;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+  color: $primary;
+  border-color: $primary;
+}

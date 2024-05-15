@@ -15,6 +15,7 @@ $( document ).ready(function() {
       overflowY: "scroll",
       removalDelay: 300,
       mainClass: 'my-mfp-zoom-in',
+      closeOnBgClick: false,
       ajax: {
         tError: "Error. Not valid url",
       },
